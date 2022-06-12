@@ -22,7 +22,7 @@ class ImplementationBlockModel(models.Model):
 
 class FunctionalityModel(models.Model):
     item = models.CharField(max_length=255, verbose_name='Элемент функционала')
-    block = models.ForeignKey(ImplementationBlockModel, related_name='block_functionality', verbose_name='Блок')
+    block = models.ForeignKey(ImplementationBlockModel, on_delete=models.CASCADE, related_name='block_functionality', verbose_name='Блок')
 
     def __str__(self):
         return self.item
