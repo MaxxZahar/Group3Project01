@@ -1,13 +1,11 @@
-
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-        {% for obj in object.get_breadcrumbs %}
-            {% if forloop.last %}
-                <li class="breadcrumb-item active" aria-current="page">{{ obj.title }}</li>
-            {% else %}
-                <li class="breadcrumb-item"><a href="{{ obj.get_absolute_url }}">{{ obj.title }}</a></li>
-            {% endif %}
-        {% endfor %}
-    </ol>
-</nav>
-
+<ul class="main-banner__text_breadcrumbs">
+    {% for obj in object.get_breadcrumbs %}
+        {% if forloop.last %}
+            <li class="main-banner__text_breadcrumbs_item">{{ obj.title }}</li>
+        {% else %}
+            <li class="main-banner__text_breadcrumbs_item">
+                <a href="{{ obj.get_absolute_url }}" class="main-banner__text_breadcrumbs_item-link">{{ obj.title }}</a>
+            </li>
+        {% endif %}
+    {% endfor %}
+</ul>
