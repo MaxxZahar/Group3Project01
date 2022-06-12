@@ -1,9 +1,8 @@
 
-<ul class="navbar-nav me-auto mb-2 mb-md-0">
+<ul class="header__navigation_list">
     {% for menu_item in menu %}
-        <li class="nav-item">
-            <a class="nav-link {% if menu_item.is_current %}active{% endif %}" aria-current="page"
-               {% if menu_item.target_blank %}target="_blank" {% endif %}
+        <li class="header__navigation_list_item">
+            <a class="header__navigation_list_item-link"
                href="{{ menu_item.get_link }}">{{ menu_item.title }}</a>
         </li>
     {% endfor %}

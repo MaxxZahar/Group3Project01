@@ -1,14 +1,18 @@
+{% load static %}
+<header class="header container">
 
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="/">GarpixCMS</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExampleDefault"
-                aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+    <a href="./index.html" class="header__logo">
+        <img src="{{header.logo}}" alt="{{header.logo_alt}}">
+    </a>
+
+    <nav class="header__navigation">
+        {% include 'menus/header_menu.html' with menu=menus.header_menu %}
+        <a href="tel:{{header.phone_url}}" class="header__navigation_phone">{{header.phone}}</a>
+
+        <button class="header__navigation_menu">
+            <p class="header__navigation_menu-description">Меню</p>
+            <img src="{% static 'imgs/menu_btn.svg' %}" class="header__navigation_menu-img" alt="menu-btn">
         </button>
+    </nav>
 
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            {% include 'menus/header_menu.html' with menu=menus.header_menu %}
-        </div>
-    </div>
-</nav>
+</header>
