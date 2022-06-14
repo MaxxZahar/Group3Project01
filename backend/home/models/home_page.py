@@ -8,13 +8,16 @@ class HomePage(BasePage):
     def get_context(self, request=None, *args, **kwargs):
         from .top_block import TopBlockModel
         from .header import HeaderModel
-        from ..serializers import TopBlockSerializer, HeaderSerializer
+        from .description_block import DescriptionBlockModel
+        from ..serializers import TopBlockSerializer, HeaderSerializer, DescriptionBlockSerializer
         context = super().get_context(request, *args, **kwargs)
         top_block = TopBlockSerializer(TopBlockModel.objects.first()).data
         header = HeaderSerializer(HeaderModel.objects.first()).data
+        description_block = DescriptionBlockSerializer(DescriptionBlockModel.objects.first()).data
         context.update({
             'header': header,
             'top_block': top_block,
+            'description_block': description_block,
         })
         return context
 

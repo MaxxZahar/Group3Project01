@@ -1,0 +1,37 @@
+{% load static %}
+<section class="description container">
+            <div class="description-purpose">
+                <h3 class="description-purpose__title default-title">{{description_block.title_1}}</h3>
+                <p class="description-purpose__text">{{description_block.top_text}}</p>
+            </div>
+            <div class="description-problems">
+                <h3 class="description-problems__title default-title">{{description_block.title_2}}</h3>
+                <p class="description-problems__text">{{description_block.text}}</p>
+                {% if description_block.description_block_problem %}
+                <ul class="description-problems__list">
+                    {% for problem in description_block.description_block_problem %}
+                    <li class="description-problems__list_item">
+                        <ul class="description-problems__list_item_text">
+                            <p class="description-problems__list_item_text_number">
+                                {{problem.number}}</p>
+                            <p class="description-problems__list_item_text_description">
+                                {{problem.description}}
+                            </p>
+                        </ul>
+                        {% if problem.problem_part %}
+                        <ul class="description-problems__list_item_sublist">
+                            {% for part in problem.problem_part %}
+                            <li class="description-problems__list_item_sublist_subitem">
+                                <p class="description-problems__list_item_sublist_subitem-title">{{part.name}}</p>
+                                <p class="description-problems__list_item_sublist_subitem-subtitle">{{part.text}}</p>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+            <img src="{% static 'imgs/Logo-blur.svg' %}" class="description-img" alt="Logo-blur">
+</section>

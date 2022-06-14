@@ -18,11 +18,10 @@ class DescriptionBlockModel(models.Model):
 class Problem(models.Model):
     number = models.IntegerField(blank=True, null=True, verbose_name='Номер')
     description = models.TextField(verbose_name='Описание')
-    block = models.ForeignKey(DescriptionBlockModel, on_delete=models.CASCADE,
-                                   related_name='description_block_problem', verbose_name='Блок')
+    block = models.ForeignKey(DescriptionBlockModel, on_delete=models.CASCADE, related_name='description_block_problem', verbose_name='Блок')
 
     def __str__(self):
-        return self.number + '.' + self.description
+        return f'{self.number}. {self.description}'
 
     class Meta:
         verbose_name = 'Проблема'
