@@ -1,10 +1,10 @@
-<ul class="main-banner__text_breadcrumbs">
+<ul class="main-banner-group__text_breadcrumbs">
     {% for obj in object.get_breadcrumbs %}
         {% if forloop.last %}
-            <li class="main-banner__text_breadcrumbs_item">{{ obj.title }}</li>
+            <li class="main-banner-group__text_breadcrumbs_item">{{ obj.title }}</li>
         {% else %}
-            <li class="main-banner__text_breadcrumbs_item">
-                <a href="{{ obj.get_absolute_url }}" class="main-banner__text_breadcrumbs_item-link">{{ obj.title }}</a>
+            <li class="main-banner-group__text_breadcrumbs_item">
+                <a href="{{ obj.get_absolute_url }}" class="main-banner-group__text_breadcrumbs_item-link">{{ obj.title }}</a>
             </li>
         {% endif %}
     {% endfor %}

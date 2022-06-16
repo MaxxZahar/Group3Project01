@@ -1,15 +1,18 @@
 <section class="main-banner">
-    <div class="main-banner__text container">
-        <h2 class="visually-hidden">Баннер</h2>
-        {% include 'include/breadcrumb.html' %}
-        <p class="main-banner__text_signature">{{top_block.top_right_text}}</p>
-    </div>
-    <h3 class="main-banner__title container">{{top_block.title}}</h3>
+     <div class="main-banner-group">
+        <div class="main-banner-group__text container">
+            <h2 class="visually-hidden">Баннер</h2>
+            {% include 'include/breadcrumb.html' %}
+            <p class="main-banner-group__text_signature">{{top_block.top_right_text}}</p>
+        </div>
+        <h3 class="main-banner-group__title container">{{top_block.title}}</h3>
+         <img src="{{top_block.img}}" class="main-banner-group__img container" alt="{{top_block.img_alt}}">
+     </div>
 </section>
 <section class="main-description">
     <div class="main-description__group container">
-        <img src="{{top_block.img}}" class="main-description__group-img" alt="{{top_block.img_alt}}">
+        <img src="{{top_block.logo}}" class="main-description__group-img" alt="{{top_block.logo_alt}}">
         <p class="main-description__group-text">{{top_block.text}}</p>
     </div>
-    <img src="{{top_block.logo}}" class="main-description__img container" alt="{{top_block.logo_alt}}">
+
 </section>

@@ -11,7 +11,15 @@ body {
 body main {
     background-color: #f6f6f7;
 }
+::after,
+::before {
+    box-sizing: border-box;
+}
+h1,
+h2,
 h3,
+h4,
+h5,
 ul {
     margin: 0;
 }
@@ -243,45 +251,55 @@ template {
     margin-left: 10px;
 }
 .main-banner {
-    background-image: url(../imgs/background.jpg);
-    background-color: #fff;
+    background-color: #4036ba;
+}
+.main-banner-group {
+    background-image: linear-gradient(358.91deg, #4036ba 4%, rgba(64, 54, 186, 0.05) 99.1%), url(../imgs/background.jpg);
+    background-size: 1920px 900px;
     background-repeat: no-repeat;
-    background-position: center center;
-    min-height: 980px;
+    max-width: 1920px;
+    margin: 0 auto;
+    min-height: 900px;
     color: #fff;
     text-align: center;
 }
-.main-banner__text {
+.main-banner-group__img {
+    border: 7px solid rgba(24, 29, 39, 0.9);
+    border-radius: 34px;
+    max-width: 1138px;
+    max-height: 642px;
+    margin-bottom: -208px;
+    z-index: 2;
+}
+.main-banner-group__text {
     padding-top: 62px;
     display: flex;
     justify-content: space-between;
     margin-bottom: 103px;
 }
-.main-banner__text_breadcrumbs {
+.main-banner-group__text_breadcrumbs {
     display: flex;
 }
-.main-banner__text_breadcrumbs_item-link {
+.main-banner-group__text_breadcrumbs_item-link {
     color: #fff;
 }
-.main-banner__text_signature {
-    margin: initial;
-}
-.main-banner__title {
+.main-banner-group__title {
     text-align: center;
+    max-width: 1715px;
     font-weight: 700;
     font-size: 80px;
     line-height: 120%;
-    margin-bottom: 144px;
+    padding-bottom: 144px;
 }
 .main-description {
     background-color: #4036ba;
+    box-shadow: 0 -8px 48px rgba(35, 31, 32, 0.24);
     min-height: 328px;
     position: relative;
 }
 .main-description__group {
     display: flex;
     justify-content: space-between;
-    z-index: 3;
 }
 .main-description__group-img {
     margin-top: 53px;
@@ -291,20 +309,6 @@ template {
     max-width: 1140px;
     color: #fff;
     line-height: 130%;
-}
-.main-description__img {
-    border: 7px solid rgba(24, 29, 39, 0.9);
-    border-radius: 34px;
-    position: absolute;
-    max-width: 1138px;
-    max-height: 642px;
-    bottom: 138px;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    text-align: center;
-    z-index: 0;
 }
 .description {
     background-color: #f6f6f7;
@@ -370,3 +374,43 @@ template {
     font-size: 30px;
     margin-bottom: 7px;
 }
+.realization {
+    background-color: #4036ba;
+    color: #fff;
+    position: relative;
+}
+.realization__title {
+    padding-top: 120px;
+    color: #fff;
+    margin-bottom: 40px;
+}
+.realization__functional_title {
+    font-weight: 500;
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+.realization__functional_text {
+    font-size: 30px;
+}
+.realization__functional_ul {
+    display: flex;
+    align-items: center;
+}
+.realization__functional_ul_list {
+    margin-right: 20px;
+}
+.realization__functional_ul_list_item {
+    display: flex;
+    align-items: center;
+    max-width: 815px;
+    margin-bottom: 20px;
+}
+.realization__functional_ul_list_item::before {
+    background-color: #24d7ff;
+    display: inline-block;
+    min-width: 15px;
+    min-height: 15px;
+    content: "";
+    margin-right: 20px;
+}
+/*# sourceMappingURL=style.min.css.map */
