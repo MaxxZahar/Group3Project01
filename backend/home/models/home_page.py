@@ -9,15 +9,19 @@ class HomePage(BasePage):
         from .top_block import TopBlockModel
         from .header import HeaderModel
         from .description_block import DescriptionBlockModel
-        from ..serializers import TopBlockSerializer, HeaderSerializer, DescriptionBlockSerializer
+        from .implementation_block import ImplementationBlockModel
+        from ..serializers import TopBlockSerializer, HeaderSerializer, DescriptionBlockSerializer,\
+            ImplementationBlockSerializer
         context = super().get_context(request, *args, **kwargs)
         top_block = TopBlockSerializer(TopBlockModel.objects.first()).data
         header = HeaderSerializer(HeaderModel.objects.first()).data
         description_block = DescriptionBlockSerializer(DescriptionBlockModel.objects.first()).data
+        implementation_block = ImplementationBlockSerializer(ImplementationBlockModel.objects.first()).data
         context.update({
             'header': header,
             'top_block': top_block,
             'description_block': description_block,
+            'implementation_block': implementation_block,
         })
         return context
 

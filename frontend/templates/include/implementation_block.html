@@ -1,0 +1,44 @@
+<section class="realization">
+            <h3 class="realization__title default-title container">{{implementation_block.title}}</h3>
+            <div class="realization__functional container">
+                {% if implementation_block.subtitle_1 %}
+                <h4 class="realization__functional_title">{{implementation_block.subtitle_1}}</h4>
+                {% endif %}
+                {% if implementation_block.block_column %}
+                <div class="realization__functional_ul">
+                    {% for column in implementation_block.block_column %}
+                    <ul class="realization__functional_ul_list">
+                        {% for functionality in column.column_functionality %}
+                        <li class="realization__functional_ul_list_item">
+                            <p>{{functionality.item}}</p>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {% if implementation_block.text_1 %}
+                <p class="realization__functional_text">{{implementation_block.text_1}}</p>
+                {% endif %}
+            </div>
+            {% include 'implementation_images.html' %}
+            <div class="realization__design container">
+                {% if implementation_block.subtitle_2 %}
+                <h4 class="realization__design_title">{{implementation_block.subtitle_2}}</h4>
+                {% endif %}
+                {% if implementation_block.text_2 %}
+                <p class="realization__design_text">{{implementation_block.text_2}}</p>
+                {% endif %}
+            </div>
+            {% if implementation_block.block_slider_image %}
+            <div class="realization__slider">
+                {% for image in implementation_block.block_slider_image %}
+                <img src="{{image.img}}" class="realization__slider_img"
+                    alt="{{image.img_alt}}">
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% if implementation_block.bottom_text %}
+            <p class="realization__desciption container">{{implementation_block.bottom_text}}</p>
+            {% endif %}
+</section>
