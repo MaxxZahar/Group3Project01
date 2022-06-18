@@ -1,7 +1,6 @@
 from .home_page import HomePage  # noqa
 from .top_block import TopBlockModel
-from .implementation_block import ImplementationBlockModel
-from .implementation_block import FunctionalityModel
+from .implementation_block import ImplementationBlockModel, FunctionalityColumnModel, FunctionalityModel, BottomSlide
 from .header import HeaderModel
 from .description_block import DescriptionBlockModel
 from .description_block import Problem
