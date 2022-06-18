@@ -7,3 +7,4 @@ from .description_block import Problem
 from .description_block import ProblemPart
 from .team_block import TeamBlockModel, TeamItemModel
 from .technologies_block import TechnologiesBlockModel, TechnologyModel
+from .footer import FooterModel, ContactsModel, ApplicationModel, LocationModel, LinksModel

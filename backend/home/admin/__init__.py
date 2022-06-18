@@ -6,3 +6,4 @@ from .header import HeaderAdmin
 from .description_block import DescriptionBlockAdmin, ProblemAdmin, ProblemPartAdmin
 from .team_block import TeamBlockAdmin, TeamItemAdmin
 from .technologies_block import TechnologiesBlockAdmin, TechnologyAdmin
+from .footer import FooterAdmin, ContactsAdmin, ApplicationAdmin, LocationAdmin, LinksAdmin
