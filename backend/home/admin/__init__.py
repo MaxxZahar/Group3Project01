@@ -4,3 +4,4 @@ from .implementation_block import ImplementationBlockAdmin, FunctionalityColumnA
     BottomSlideAdmin
 from .header import HeaderAdmin
 from .description_block import DescriptionBlockAdmin, ProblemAdmin, ProblemPartAdmin
+from .team_block import TeamBlockAdmin, TeamItemAdmin

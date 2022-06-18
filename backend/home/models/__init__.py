@@ -5,3 +5,4 @@ from .header import HeaderModel
 from .description_block import DescriptionBlockModel
 from .description_block import Problem
 from .description_block import ProblemPart
+from .team_block import TeamBlockModel, TeamItemModel
