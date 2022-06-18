@@ -33,7 +33,7 @@ class FunctionalityColumnModel(models.Model):
 class FunctionalityModel(models.Model):
     item = models.CharField(max_length=255, verbose_name='Элемент функционала')
     column = models.ForeignKey(FunctionalityColumnModel, on_delete=models.CASCADE, related_name='column_functionality',
-                               verbose_name='Блок')
+                               verbose_name='Блок', default=1)
 
     def __str__(self):
         return self.item
