@@ -15,8 +15,8 @@ class FooterModel(models.Model):
 
 class ContactsModel(models.Model):
     title = models.CharField(blank=True, null=True, max_length=255, verbose_name='Заголовок')
-    phone = models.CharField(blank=True, null=True, max_length=255, verbose_name='Заголовок')
-    mail = models.CharField(blank=True, null=True, max_length=255, verbose_name='Заголовок')
+    phone = models.CharField(blank=True, null=True, max_length=255, verbose_name='Телефон')
+    mail = models.CharField(blank=True, null=True, max_length=255, verbose_name='Почта')
     footer = models.ForeignKey(FooterModel, on_delete=models.CASCADE, related_name='footer_contacts',
                                verbose_name='Футер')
 
