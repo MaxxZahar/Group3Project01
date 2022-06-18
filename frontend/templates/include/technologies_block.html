@@ -1,0 +1,33 @@
+<section class="technologies">
+            <div class="technologies-description container">
+                <div class="technologies-description__used">
+                    <h3 class="technologies-description__used_title default-title">{{technologies_block.title}}</h3>
+                    {% if technologies_block.subtitle %}
+                    <h4 class="technologies-description__used_subtitle">{{technologies_block.subtitle}}</h4>
+                    {% endif %}
+                    {% if technologies_block.block_technology %}
+                        <ul class="technologies-description__used_list">
+                            {% for technology in technologies_block.block_technology %}
+                                <li class="technologies-description__used_list_item">
+                                    <p>{{technology.name}}</p>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+                {% if technologies_block.text_1 | technologies_block.big_text | technologies_block.text_2 %}
+                <div class="technologies-description__duration">
+                    {% if technologies_block.text_1 %}
+                    <p class="technologies-description__duration_text">{{technologies_block.text_1}}</p>
+                    {% endif %}
+                    {% if technologies_block.big_text %}
+                    <p class="technologies-description__duration_quantity">{{technologies_block.big_text}}</p>
+                    {% endif %}
+                    {% if technologies_block.text_2 %}
+                    <p class="technologies-description__duration_subtext">{{technologies_block.text_2}}</p>
+                    {% endif %}
+                </div>
+                {% endif %}
+                {% include 'include/technologies_images.html' %}
+            </div>
+</section>
