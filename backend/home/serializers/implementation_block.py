@@ -24,7 +24,7 @@ class FunctionalityColumnSerializer(serializers.ModelSerializer):
 
 class ImplementationBlockSerializer(serializers.ModelSerializer):
     block_column = FunctionalityColumnSerializer(read_only=True, many=True)
-    block_slider_image = BottomSlideSerializer(read_only=True, manu=True)
+    block_slider_image = BottomSlideSerializer(read_only=True, many=True)
 
     class Meta:
         model = ImplementationBlockModel

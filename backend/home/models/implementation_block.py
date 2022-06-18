@@ -6,7 +6,7 @@ class ImplementationBlockModel(models.Model):
     subtitle_1 = models.CharField(blank=True, null=True, max_length=255, verbose_name='Верхний подзаголовок')
     subtitle_2 = models.CharField(blank=True, null=True, max_length=255, verbose_name='Нижний подзаголовок')
     text_1 = models.TextField(blank=True, null=True, verbose_name='Верхний текст')
-    text_2 = models.TextField(blank=True, null=True, verbose_name='Нижний текст')
+    text_2 = models.TextField(blank=True, null=True, verbose_name='Текст под вторым подзаголовком')
     bottom_text = models.TextField(blank=True, null=True, verbose_name='Нижний текст')
 
     def __str__(self):
@@ -23,7 +23,7 @@ class FunctionalityColumnModel(models.Model):
                               verbose_name='Блок')
 
     def __str__(self):
-        return self.item
+        return self.title
 
     class Meta:
         verbose_name = 'Колонка функционала'
@@ -33,19 +33,21 @@ class FunctionalityColumnModel(models.Model):
 class FunctionalityModel(models.Model):
     item = models.CharField(max_length=255, verbose_name='Элемент функционала')
     column = models.ForeignKey(FunctionalityColumnModel, on_delete=models.CASCADE, related_name='column_functionality',
-                               verbose_name='Блок', default=1)
+                               verbose_name='Колонка', default=1)
+    order = models.IntegerField(verbose_name='Порядок отображения', default=0)
 
     def __str__(self):
-        return self.item
+        return f'{self.order}.{self.item}'
 
     class Meta:
         verbose_name = 'Элемент функционала'
         verbose_name_plural = 'Элементы функционала'
+        ordering = ['order']
 
 
 class BottomSlide(models.Model):
-    img = models.ImageField(verbose_name='Верхнее изображение')
-    img_alt = models.CharField(max_length=255, verbose_name='Описание верхнего изображения')
+    img = models.ImageField(verbose_name='Изображение')
+    img_alt = models.CharField(max_length=255, verbose_name='Описание изображения')
     block = models.ForeignKey(ImplementationBlockModel, on_delete=models.CASCADE, related_name='block_slider_image',
                               verbose_name='Блок')
 
