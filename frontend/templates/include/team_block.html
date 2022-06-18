@@ -1,0 +1,10 @@
+<section class="team container">
+            <h3 class="team__title default-title">{{team_block.title}}</h3>
+            <ul class="team__list">
+                {% for member in team_block.block_team_member %}
+                <li class="team__list_item">
+                    <p class="team__list_item-text">{{member.item}}</p>
+                </li>
+                {% endfor %}
+            </ul>
+</section>
