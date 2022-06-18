@@ -15,7 +15,7 @@
                         </ul>
                     {% endif %}
                 </div>
-                {% if technologies_block.text_1 | technologies_block.big_text | technologies_block.text_2 %}
+                {% if technologies_block.text_1 or technologies_block.big_text or technologies_block.text_2 %}
                 <div class="technologies-description__duration">
                     {% if technologies_block.text_1 %}
                     <p class="technologies-description__duration_text">{{technologies_block.text_1}}</p>
