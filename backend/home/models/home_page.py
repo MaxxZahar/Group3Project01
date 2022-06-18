@@ -12,8 +12,9 @@ class HomePage(BasePage):
         from .implementation_block import ImplementationBlockModel
         from .team_block import TeamBlockModel
         from .technologies_block import TechnologiesBlockModel
+        from .footer import FooterModel
         from ..serializers import TopBlockSerializer, HeaderSerializer, DescriptionBlockSerializer,\
-            ImplementationBlockSerializer, TeamBlockSerializer, TechnologiesBlockSerializer
+            ImplementationBlockSerializer, TeamBlockSerializer, TechnologiesBlockSerializer, FooterSerializer
         context = super().get_context(request, *args, **kwargs)
         top_block = TopBlockSerializer(TopBlockModel.objects.first()).data
         header = HeaderSerializer(HeaderModel.objects.first()).data
@@ -21,6 +22,7 @@ class HomePage(BasePage):
         implementation_block = ImplementationBlockSerializer(ImplementationBlockModel.objects.first()).data
         team_block = TeamBlockSerializer(TeamBlockModel.objects.first()).data
         technologies_block = TechnologiesBlockSerializer(TechnologiesBlockModel.objects.first()).data
+        footer = FooterSerializer(FooterModel.objects.first()).data
         context.update({
             'header': header,
             'top_block': top_block,
@@ -28,6 +30,7 @@ class HomePage(BasePage):
             'implementation_block': implementation_block,
             'team_block': team_block,
             'technologies_block': technologies_block,
+            'footer': footer,
         })
         return context
 
