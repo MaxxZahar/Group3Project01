@@ -1,9 +1,47 @@
-
+{% load static %}
 <footer class="footer">
-    <div class="container">
-        <span class="text-muted">
-            {% include 'menus/footer_menu.html' with menu=menus.footer_menu %}
-        </span>
-    </div>
+        <div class="footer-up">
+            <div class="footer-up__group container">
+                <div class="footer-up__group_contacts">
+                    <p class="footer-up__group_contacts_title">{{footer.footer_contacts.title}}</p>
+                    <p class="footer-up__group_contacts_phone">{{footer.footer_contacts.phone}}</p>
+                    <p class="footer-up__group_contacts_mail">{{footer.footer_contacts.mail}}</p>
+                </div>
+                <div class="footer-up__group_application">
+                    <p class="footer-up__group_application_title">{{footer.footer_contacts.text}}</p>
+                    <a href="{{footer.footer_contacts.link}}" class="footer-up__group_application_link">
+                        {{footer.footer_contacts.link_text}}</a>
+                </div>
+            </div>
+            {% if footer.footer_location %}
+            <ul class="footer-up__list container">
+                {% for location in footer.footer_location %}
+                <li class="footer-up__list_item">
+                    <div class="footer-up__list_item_text">
+                        <p class="footer-up__list_item_text-city">{{location.city}}</p>
+                        <p class="footer-up__list_item_text-adress">{{location.address}}</p>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% if footer.footer_links %}
+            <ul class="footer-up__links container">
+                {% for link in footer.footer_links %}
+                <li class="footer-up__links_item">
+                    <a href="{{link.link}}">{{link.name}}</a>
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+        <div class="footer-down">
+            <div class="footer-down_group container">
+                <p class="footer-down_group_text">{{footer.left_bottom_text}}</p>
+                <p class="footer-down_group_text">{{footer.right_bottom_text}}</p>
+            </div>
+            <button class="footer-down_upward-btn container">
+                <img src="{% static 'imgs/upward-btn.svg' %}" alt="upward">
+            </button>
+        </div>
 </footer>
-
