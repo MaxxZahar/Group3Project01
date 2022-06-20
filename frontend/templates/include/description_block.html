@@ -17,7 +17,8 @@
                 <ul class="description-problems__list">
                     {% for problem in description_block.description_block_problem %}
                     <li class="description-problems__list_item">
-                        <ul class="description-problems__list_item_text">
+                        <ul class="description-problems__list_item_text"
+                            {% if color.default is False %} style="color:{{color.description_font_color}}" {% endif %}>
                             {% if problem.number %}
                             <p class="description-problems__list_item_text_number">
                                 {{problem.number}}</p>
