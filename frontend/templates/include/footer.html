@@ -2,16 +2,30 @@
 <footer class="footer">
         <div class="footer-up">
             <div class="footer-up__group container">
+                {% if footer.footer_contacts.0 %}
                 <div class="footer-up__group_contacts">
+                    {% if footer.footer_contacts.0.title %}
                     <p class="footer-up__group_contacts_title">{{footer.footer_contacts.0.title}}</p>
+                    {% endif %}
+                    {% if footer.footer_contacts.0.phone %}
                     <p class="footer-up__group_contacts_phone">{{footer.footer_contacts.0.phone}}</p>
+                    {% endif %}
+                    {% if footer.footer_contacts.0.mail %}
                     <p class="footer-up__group_contacts_mail">{{footer.footer_contacts.0.mail}}</p>
+                    {% endif %}
                 </div>
+                {% endif %}
+                {% if footer.footer_application.0 %}
                 <div class="footer-up__group_application">
+                    {% if footer.footer_application.0.text %}
                     <p class="footer-up__group_application_title">{{footer.footer_application.0.text}}</p>
+                    {% endif %}
+                    {% if footer.footer_application.0.link %}
                     <a href="{{footer.footer_application.0.link}}" class="footer-up__group_application_link">
                         {{footer.footer_application.0.link_text}}</a>
+                    {% endif %}
                 </div>
+                {% endif %}
             </div>
             {% if footer.footer_location %}
             <ul class="footer-up__list container">
@@ -37,8 +51,12 @@
         </div>
         <div class="footer-down">
             <div class="footer-down_group container">
+                {% if footer.left_bottom_text %}
                 <p class="footer-down_group_text">{{footer.left_bottom_text}}</p>
+                {% endif %}
+                {% if footer.right_bottom_text %}
                 <p class="footer-down_group_text">{{footer.right_bottom_text}}</p>
+                {% endif %}
             </div>
             <button class="footer-down_upward-btn container">
                 <img src="{% static 'imgs/upward-btn.svg' %}" alt="upward">

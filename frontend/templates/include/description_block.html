@@ -2,18 +2,26 @@
 <section class="description container">
             <div class="description-purpose">
                 <h3 class="description-purpose__title default-title">{{description_block.title_1}}</h3>
+                {% if description_block.top_text %}
                 <p class="description-purpose__text">{{description_block.top_text}}</p>
+                {% endif %}
             </div>
             <div class="description-problems">
+                {% if description_block.title_2 %}
                 <h3 class="description-problems__title default-title">{{description_block.title_2}}</h3>
+                {% endif %}
+                {% if description_block.text %}
                 <p class="description-problems__text">{{description_block.text}}</p>
+                {% endif %}
                 {% if description_block.description_block_problem %}
                 <ul class="description-problems__list">
                     {% for problem in description_block.description_block_problem %}
                     <li class="description-problems__list_item">
                         <ul class="description-problems__list_item_text">
+                            {% if problem.number %}
                             <p class="description-problems__list_item_text_number">
                                 {{problem.number}}</p>
+                            {% endif %}
                             <p class="description-problems__list_item_text_description">
                                 {{problem.description}}
                             </p>
@@ -22,7 +30,9 @@
                         <ul class="description-problems__list_item_sublist">
                             {% for part in problem.problem_part %}
                             <li class="description-problems__list_item_sublist_subitem">
+                                {% if part.name %}
                                 <p class="description-problems__list_item_sublist_subitem-title">{{part.name}}</p>
+                                {% endif %}
                                 <p class="description-problems__list_item_sublist_subitem-subtitle">{{part.text}}</p>
                             </li>
                             {% endfor %}

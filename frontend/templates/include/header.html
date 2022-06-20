@@ -7,7 +7,9 @@
 
     <nav class="header__navigation">
         {% include 'menus/header_menu.html' with menu=menus.header_menu %}
+        {% if header.phone %}
         <a href="tel:{{header.phone_url}}" class="header__navigation_phone">{{header.phone}}</a>
+        {% endif %}
 
         <button class="header__navigation_menu">
             <p class="header__navigation_menu-description">Меню</p>

@@ -3,16 +3,24 @@
         <div class="main-banner-group__text container">
             <h2 class="visually-hidden">Баннер</h2>
             {% include 'include/breadcrumb.html' %}
+            {% if top_block.top_right_text %}
             <p class="main-banner-group__text_signature">{{top_block.top_right_text}}</p>
+            {% endif %}
         </div>
         <h3 class="main-banner-group__title container">{{top_block.title}}</h3>
+         {% if top_block.img %}
          <img src="{{top_block.img}}" class="main-banner-group__img container" alt="{{top_block.img_alt}}">
+         {% endif %}
      </div>
 </section>
 <section class="main-description">
     <div class="main-description__group container">
+        {% if top_block.logo %}
         <img src="{{top_block.logo}}" class="main-description__group-img" alt="{{top_block.logo_alt}}">
+        {% endif %}
+        {% if top_block.text %}
         <p class="main-description__group-text">{{top_block.text}}</p>
+        {% endif %}
     </div>
 
 </section>
