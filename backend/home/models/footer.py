@@ -62,6 +62,7 @@ class LinksModel(models.Model):
     name = models.CharField(max_length=255, verbose_name='Название')
     footer = models.ForeignKey(FooterModel, on_delete=models.CASCADE, related_name='footer_links',
                                verbose_name='Футер')
+    order = models.IntegerField(verbose_name='Порядок отображения', default=0)
 
     def __str__(self):
         return f'{self.name}'
@@ -69,3 +70,4 @@ class LinksModel(models.Model):
     class Meta:
         verbose_name = 'Ссылки'
         verbose_name_plural = 'Ссылки'
+        ordering = ['order']

@@ -19,6 +19,7 @@ class Problem(models.Model):
     number = models.IntegerField(blank=True, null=True, verbose_name='Номер')
     description = models.TextField(verbose_name='Описание')
     block = models.ForeignKey(DescriptionBlockModel, on_delete=models.CASCADE, related_name='description_block_problem', verbose_name='Блок')
+    order = models.IntegerField(verbose_name='Порядок отображения', default=0)
 
     def __str__(self):
         return f'{self.number}. {self.description}'
@@ -26,12 +27,14 @@ class Problem(models.Model):
     class Meta:
         verbose_name = 'Проблема'
         verbose_name_plural = 'Проблемы'
+        ordering = ['order']
 
 
 class ProblemPart(models.Model):
     name = models.CharField(max_length=255, blank=True, null=True, verbose_name='Заголовок')
     text = models.TextField(verbose_name='Текст')
     problem = models.ForeignKey(Problem, on_delete=models.CASCADE, related_name='problem_part', verbose_name='Проблема')
+    order = models.IntegerField(verbose_name='Порядок отображения', default=0)
 
     def __str__(self):
         return self.text
@@ -39,3 +42,4 @@ class ProblemPart(models.Model):
     class Meta:
         verbose_name = 'Часть проблемы'
         verbose_name_plural = 'Части проблемы'
+        ordering = ['order']

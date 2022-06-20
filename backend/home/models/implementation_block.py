@@ -50,6 +50,7 @@ class BottomSlide(models.Model):
     img_alt = models.CharField(max_length=255, verbose_name='Описание изображения')
     block = models.ForeignKey(ImplementationBlockModel, on_delete=models.CASCADE, related_name='block_slider_image',
                               verbose_name='Блок')
+    order = models.IntegerField(verbose_name='Порядок отображения', default=0)
 
     def __str__(self):
         return self.img_alt
@@ -57,3 +58,4 @@ class BottomSlide(models.Model):
     class Meta:
         verbose_name = 'Изображение слайдера'
         verbose_name_plural = 'Изображения слайдера'
+        ordering = ['order']
