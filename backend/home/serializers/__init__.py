@@ -6,3 +6,4 @@ from .implementation_block import ImplementationBlockSerializer, FunctionalityCo
 from .team_block import TeamBlockSerializer, TeamItemSerializer
 from .technologies_block import TechnologiesBlockSerializer, TechnologySerializer
 from .footer import FooterSerializer, ContactsSerializer, ApplicationSerializer, LocationSerializer, LinksSerializer
+from .color import ColorSerializer

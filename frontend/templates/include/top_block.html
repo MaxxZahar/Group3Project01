@@ -1,5 +1,8 @@
-<section class="main-banner">
-     <div class="main-banner-group">
+{% load static %}
+<section class="main-banner" {% if color.default is False %} style="background-color:{{color.color}}" {% endif %}>
+     <div class="main-banner-group" {% if color.default is False %}
+          style="background-image:linear-gradient(358.91deg, {{color.color}} 4%, {{color.rgba}} 99.1%),
+          url({% static 'imgs/background.jpg' %})" {% endif %}>
         <div class="main-banner-group__text container">
             <h2 class="visually-hidden">Баннер</h2>
             {% include 'include/breadcrumb.html' %}
@@ -13,7 +16,7 @@
          {% endif %}
      </div>
 </section>
-<section class="main-description">
+<section class="main-description" {% if color.default is False %} style="background-color:{{color.color}}" {% endif %}>
     <div class="main-description__group container">
         {% if top_block.logo %}
         <img src="{{top_block.logo}}" class="main-description__group-img" alt="{{top_block.logo_alt}}">
