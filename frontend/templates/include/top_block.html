@@ -1,7 +1,8 @@
 {% load static %}
 <section class="main-banner" {% if color.default is False %} style="background-color:{{color.color}}" {% endif %}>
     <h2 class="visually-hidden">Баннер</h2>
-    <div class="main-banner-background">
+    <div class="main-banner-background" {% if color.default is False %}
+         style="--color: {{color.color}}; --rgba: {{color.rgba}}" {% endif %}>
         <img src="{% static 'imgs/background.jpg' %}" class="main-banner-background-img">
     </div>
      <div class="main-banner-group container">

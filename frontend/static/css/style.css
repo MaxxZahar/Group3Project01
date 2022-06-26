@@ -351,6 +351,8 @@ template {
     background-color: #4036ba;
 }
 .main-banner-background {
+    --color: #4036ba;
+    --rgba: rgba(64, 54, 186, 0.05);
     position: relative;
     overflow: hidden;
     height: 900px;
@@ -371,7 +373,7 @@ template {
 .main-banner-background::before {
     z-index: 6;
     content: "";
-    background: linear-gradient(358.91deg, #4036ba 4%, rgba(64, 54, 186, 0.05) 99.1%);
+    background: linear-gradient(358.91deg, var(--color) 4%, var(--rgba) 99.1%);
 }
 .main-banner-background-img {
     z-index: 5;
