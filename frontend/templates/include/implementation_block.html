@@ -9,7 +9,8 @@
                     {% for column in implementation_block.block_column %}
                     <ul class="realization__functional_ul_list">
                         {% for functionality in column.column_functionality %}
-                        <li class="realization__functional_ul_list_item">
+                        <li class="realization__functional_ul_list_item"
+                            {% if color.default is False %} style="--color:{{color.secondary_color}}" {% endif %}>
                             <p>{{functionality.item}}</p>
                         </li>
                         {% endfor %}

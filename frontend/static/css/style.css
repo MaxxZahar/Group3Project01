@@ -686,13 +686,14 @@ template {
     margin-right: 20px;
 }
 .realization__functional_ul_list_item {
+    --color: #24d7ff;
     display: flex;
     align-items: center;
     max-width: 815px;
     margin-bottom: 20px;
 }
 .realization__functional_ul_list_item::before {
-    background-color: #24d7ff;
+    background-color: var(--color);
     min-width: 15px;
     min-height: 15px;
     content: "";

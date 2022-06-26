@@ -21,7 +21,9 @@
                     <p class="technologies-description__duration_text">{{technologies_block.text_1}}</p>
                     {% endif %}
                     {% if technologies_block.big_text %}
-                    <p class="technologies-description__duration_quantity">{{technologies_block.big_text}}</p>
+                    <p class="technologies-description__duration_quantity"
+                       {% if color.default is False %} style="color:{{color.secondary_color}}" {% endif %}>
+                        {{technologies_block.big_text}}</p>
                     {% endif %}
                     {% if technologies_block.text_2 %}
                     <p class="technologies-description__duration_subtext">{{technologies_block.text_2}}</p>
