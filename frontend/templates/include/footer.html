@@ -22,7 +22,8 @@
                     {% endif %}
                     {% if footer.footer_application.0.link %}
                     <a href="{{footer.footer_application.0.link}}" class="footer-up__group_application_link">
-                        {{footer.footer_application.0.link_text}}</a>
+                        <p>{{footer.footer_application.0.link_text}}</p>
+                        </a>
                     {% endif %}
                 </div>
                 {% endif %}
@@ -43,7 +44,7 @@
             <ul class="footer-up__links container">
                 {% for link in footer.footer_links %}
                 <li class="footer-up__links_item">
-                    <a href="{{link.link}}">{{link.name}}</a>
+                    <a href="{{link.link}}"><p>{{link.name}}</p></a>
                 </li>
                 {% endfor %}
             </ul>
@@ -58,8 +59,5 @@
                 <p class="footer-down_group_text">{{footer.right_bottom_text}}</p>
                 {% endif %}
             </div>
-            <button class="footer-down_upward-btn container">
-                <img src="{% static 'imgs/upward-btn.svg' %}" alt="upward">
-            </button>
         </div>
 </footer>

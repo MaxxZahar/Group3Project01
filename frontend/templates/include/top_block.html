@@ -1,18 +1,20 @@
 {% load static %}
 <section class="main-banner" {% if color.default is False %} style="background-color:{{color.color}}" {% endif %}>
-     <div class="main-banner-group" {% if color.default is False %}
-          style="background-image:linear-gradient(358.91deg, {{color.color}} 4%, {{color.rgba}} 99.1%),
-          url({% static 'imgs/background.jpg' %})" {% endif %}>
-        <div class="main-banner-group__text container">
-            <h2 class="visually-hidden">Баннер</h2>
+    <h2 class="visually-hidden">Баннер</h2>
+    <div class="main-banner-background">
+        <img src="{% static 'imgs/background.jpg' %}" class="main-banner-background-img">
+    </div>
+     <div class="main-banner-group container">
+        <div class="main-banner-group__text">
+
             {% include 'include/breadcrumb.html' %}
             {% if top_block.top_right_text %}
             <p class="main-banner-group__text_signature">{{top_block.top_right_text}}</p>
             {% endif %}
         </div>
-        <h3 class="main-banner-group__title container">{{top_block.title}}</h3>
+        <h3 class="main-banner-group__title">{{top_block.title}}</h3>
          {% if top_block.img %}
-         <img src="{{top_block.img}}" class="main-banner-group__img container" alt="{{top_block.img_alt}}">
+         <img src="{{top_block.img}}" class="main-banner-group__img" alt="{{top_block.img_alt}}">
          {% endif %}
      </div>
 </section>
