@@ -7,6 +7,7 @@ class ColorModel(models.Model):
     color = ColorField(default='#4036ba', verbose_name='Выбрать цвет')
     description_font_color = ColorField(default='#4036ba', verbose_name='Выбрать цвет текста в блоке описания')
     secondary_color = ColorField(default='#24d7ff', verbose_name='Выбрать второй цвет')
+    order = models.IntegerField(default=0, verbose_name='Применяется схема с наименьшим номером')
 
     def __str__(self):
         return self.color
@@ -14,3 +15,4 @@ class ColorModel(models.Model):
     class Meta:
         verbose_name = 'Цвет'
         verbose_name_plural = 'Цвета'
+        ordering = ['order']
