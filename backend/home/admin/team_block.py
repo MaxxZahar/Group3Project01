@@ -2,9 +2,16 @@ from django.contrib import admin
 from ..models import TeamBlockModel, TeamItemModel
 
 
+class TeamItemInline(admin.TabularInline):
+    model = TeamItemModel
+    fk_name = 'block'
+
+
 @admin.register(TeamBlockModel)
 class TeamBlockAdmin(admin.ModelAdmin):
-    pass
+    inlines = [
+        TeamItemInline,
+    ]
 
 
 @admin.register(TeamItemModel)
