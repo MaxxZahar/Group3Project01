@@ -27,7 +27,7 @@ class FunctionalityColumnModel(models.Model):
 
     class Meta:
         verbose_name = 'Колонка функционала'
-        verbose_name_plural = 'Колонки функционала'
+        verbose_name_plural = 'Колонки функционала(Блок реализации)'
 
 
 class FunctionalityModel(models.Model):

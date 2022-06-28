@@ -26,7 +26,7 @@ class Problem(models.Model):
 
     class Meta:
         verbose_name = 'Проблема'
-        verbose_name_plural = 'Проблемы'
+        verbose_name_plural = 'Проблемы(Блок описания)'
         ordering = ['order']
 
 
