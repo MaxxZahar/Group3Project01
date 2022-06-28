@@ -29,21 +29,21 @@ class FooterAdmin(admin.ModelAdmin):
     ]
 
 
-@admin.register(ContactsModel)
-class ContactsAdmin(admin.ModelAdmin):
-    pass
-
-
-@admin.register(ApplicationModel)
-class ApplicationAdmin(admin.ModelAdmin):
-    pass
-
-
-@admin.register(LocationModel)
-class LocationAdmin(admin.ModelAdmin):
-    pass
-
-
-@admin.register(LinksModel)
-class LinksAdmin(admin.ModelAdmin):
-    pass
+# @admin.register(ContactsModel)
+# class ContactsAdmin(admin.ModelAdmin):
+#     pass
+#
+#
+# @admin.register(ApplicationModel)
+# class ApplicationAdmin(admin.ModelAdmin):
+#     pass
+#
+#
+# @admin.register(LocationModel)
+# class LocationAdmin(admin.ModelAdmin):
+#     pass
+#
+#
+# @admin.register(LinksModel)
+# class LinksAdmin(admin.ModelAdmin):
+#     pass

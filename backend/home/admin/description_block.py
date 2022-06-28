@@ -28,6 +28,6 @@ class ProblemAdmin(admin.ModelAdmin):
     ]
 
 
-@admin.register(ProblemPart)
-class ProblemPartAdmin(admin.ModelAdmin):
-    pass
+# @admin.register(ProblemPart)
+# class ProblemPartAdmin(admin.ModelAdmin):
+#     pass

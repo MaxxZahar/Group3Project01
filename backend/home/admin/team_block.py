@@ -14,6 +14,6 @@ class TeamBlockAdmin(admin.ModelAdmin):
     ]
 
 
-@admin.register(TeamItemModel)
-class TeamItemAdmin(admin.ModelAdmin):
-    pass
+# @admin.register(TeamItemModel)
+# class TeamItemAdmin(admin.ModelAdmin):
+#     pass

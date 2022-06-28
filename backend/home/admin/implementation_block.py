@@ -31,11 +31,11 @@ class FunctionalityColumnAdmin(admin.ModelAdmin):
     ]
 
 
-@admin.register(FunctionalityModel)
-class FunctionalityAdmin(admin.ModelAdmin):
-    pass
-
-
-@admin.register(BottomSlide)
-class BottomSlideAdmin(admin.ModelAdmin):
-    pass
+# @admin.register(FunctionalityModel)
+# class FunctionalityAdmin(admin.ModelAdmin):
+#     pass
+#
+#
+# @admin.register(BottomSlide)
+# class BottomSlideAdmin(admin.ModelAdmin):
+#     pass

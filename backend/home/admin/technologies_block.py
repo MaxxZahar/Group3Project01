@@ -7,9 +7,9 @@ class TechnologyInline(admin.TabularInline):
     fk_name = 'block'
 
 
-@admin.register(TechnologyModel)
-class TechnologyAdmin(admin.ModelAdmin):
-    pass
+# @admin.register(TechnologyModel)
+# class TechnologyAdmin(admin.ModelAdmin):
+#     pass
 
 
 @admin.register(TechnologiesBlockModel)
