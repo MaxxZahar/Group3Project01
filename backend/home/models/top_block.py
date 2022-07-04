@@ -9,6 +9,8 @@ class TopBlockModel(models.Model):
     img_alt = models.CharField(blank=True, null=True, max_length=255, verbose_name='Описание изображения')
     logo = models.FileField(blank=True, null=True, verbose_name='Логотип')
     logo_alt = models.CharField(blank=True, null=True, max_length=255, verbose_name='Описание логотипа')
+    # case = models.ForeignKey(CasePage, on_delete=models.CASCADE, default=0, related_name='case_top_block',
+    #                          verbose_name='Кейс')
 
     def __str__(self):
         return self.title

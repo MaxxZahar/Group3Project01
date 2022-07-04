@@ -13,5 +13,3 @@ from .technologies_block import TechnologiesBlockAdmin
 # from .footer import FooterAdmin, ContactsAdmin, ApplicationAdmin, LocationAdmin, LinksAdmin
 from .footer import FooterAdmin
 from .color import ColorAdmin
-from .case_list_page import CaseListPageAdmin  # noqa
-from .case_page import CasePageAdmin  # noqa
