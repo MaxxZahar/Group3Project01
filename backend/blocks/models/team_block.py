@@ -1,0 +1,30 @@
+from django.db import models
+from cases.models import CasePage
+
+
+class TeamBlockModel(models.Model):
+    title = models.CharField(max_length=255, verbose_name='Заголовок')
+    case = models.ForeignKey(CasePage, on_delete=models.CASCADE, related_name='case_team_block',
+                             verbose_name='Кейс')
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'Блок команды'
+        verbose_name_plural = 'Блок команды'
+
+
+class TeamItemModel(models.Model):
+    item = models.CharField(max_length=255, verbose_name='Элемент команды')
+    block = models.ForeignKey(TeamBlockModel, on_delete=models.CASCADE, related_name='block_team_member',
+                              verbose_name='Блок')
+    order = models.IntegerField(verbose_name='Порядок отображения', default=0)
+
+    def __str__(self):
+        return self.item
+
+    class Meta:
+        verbose_name = 'Элемент команды'
+        verbose_name_plural = 'Элементы команды'
+        ordering = ['order']
