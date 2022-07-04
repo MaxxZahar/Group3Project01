@@ -4,7 +4,7 @@
             <li class="main-banner-group__text_breadcrumbs_item">{{ obj.title }}</li>
         {% else %}
             <li class="main-banner-group__text_breadcrumbs_item">
-                <a href="{{ obj.get_absolute_url }}" class="main-banner-group__text_breadcrumbs_item-link">{{ obj.title }}</a>
+                <a href="{{ obj.get_absolute_url }}" class="main-banner-group__text_breadcrumbs_item-link">{{ obj.title }}/</a>
             </li>
         {% endif %}
     {% endfor %}

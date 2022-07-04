@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from ..models import TopBlockModel
-from .settings import ALLOWED_IMAGE_EXTENSIONS
+from ..settings import ALLOWED_IMAGE_EXTENSIONS
 from django.core.validators import FileExtensionValidator
 
 
