@@ -9,3 +9,5 @@ from .team_block import TeamBlockModel, TeamItemModel
 from .technologies_block import TechnologiesBlockModel, TechnologyModel
 from .footer import FooterModel, ContactsModel, ApplicationModel, LocationModel, LinksModel
 from .color import ColorModel
+from .case_list_page import CaseListPage  # noqa
+from .case_page import CasePage  # noqa
