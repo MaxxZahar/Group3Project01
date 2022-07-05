@@ -20,7 +20,8 @@ class CasePage(BasePage):
         context = super().get_context(request, *args, **kwargs)
         top_block = TopBlockSerializer(TopBlockModel.objects.filter(case=self.id).first()).data
         header = HeaderSerializer(HeaderModel.objects.first()).data
-        description_block = DescriptionBlockSerializer(DescriptionBlockModel.objects.filter(case=self.id).first()).data
+        description_blocks = DescriptionBlockSerializer(DescriptionBlockModel.objects.filter(case=self.id),
+                                                        many=True).data
         implementation_block = ImplementationBlockSerializer(ImplementationBlockModel.objects.filter(case=self.id)
                                                              .first()).data
         team_block = TeamBlockSerializer(TeamBlockModel.objects.filter(case=self.id).first()).data
@@ -31,7 +32,7 @@ class CasePage(BasePage):
         context.update({
             'header': header,
             'top_block': top_block,
-            'description_block': description_block,
+            'description_blocks': description_blocks,
             'implementation_block': implementation_block,
             'team_block': team_block,
             'technologies_block': technologies_block,

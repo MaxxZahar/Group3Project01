@@ -1,56 +1,56 @@
 {% load static %}
-<section class="description container">
-            <img src="{% static 'imgs/Logo-blur.svg' %}" class="description-img" alt="Logo-blur">
-            <div class="description-forpic">
-                <div class="description-purpose">
-                    <h3 class="description-purpose__title default-title">{{description_block.title_1}}</h3>
-                    {% if description_block.top_text %}
-                    <p class="description-purpose__text">{{description_block.top_text}}</p>
-                    {% endif %}
-                </div>
-                <div class="description-problems">
-                    {% if description_block.title_2 %}
-                    <h3 class="description-problems__title default-title">{{description_block.title_2}}</h3>
-                    {% endif %}
-                    {% if description_block.text %}
-                    <p class="description-problems__text">{{description_block.text}}</p>
-                    {% endif %}
-                    {% if description_block.description_block_problem %}
-                    <ul class="description-problems__list">
-                        {% for problem in description_block.description_block_problem %}
-                        <li class="description-problems__list_item">
-                            <ul class="description-problems__list_item_text"
-                                {% if color.default is False %} style="color:{{color.description_font_color}}" {% endif %}>
-                                {% if problem.number %}
-                                <p class="description-problems__list_item_text_number">
-                                    {{problem.number}}</p>
-                                {% endif %}
-                                <p class="description-problems__list_item_text_description">
-                                    {{problem.description}}
-                                </p>
-                            </ul>
-                            {% if problem.problem_part %}
-                            <ul class="description-problems__list_item_sublist">
-                                {% for part in problem.problem_part %}
-                                <li class="description-problems__list_item_sublist_subitem">
-                                    {% if part.name %}
-                                    <p class="description-problems__list_item_sublist_subitem-title">{{part.name}}</p>
+<div class="slider">
+    {% for description_block in description_blocks %}
+    <section class="description container">
+                <img src="{% static 'imgs/Logo-blur.svg' %}" class="description-img" alt="Logo-blur">
+                <div class="description-forpic">
+                    <div class="description-purpose">
+                        <h3 class="description-purpose__title default-title">{{description_block.title_1}}</h3>
+                        {% if description_block.top_text %}
+                        <p class="description-purpose__text">{{description_block.top_text}}</p>
+                        {% endif %}
+                    </div>
+                    <div class="description-problems">
+                        {% if description_block.title_2 %}
+                        <h3 class="description-problems__title default-title">{{description_block.title_2}}</h3>
+                        {% endif %}
+                        {% if description_block.text %}
+                        <p class="description-problems__text">{{description_block.text}}</p>
+                        {% endif %}
+                        {% if description_block.description_block_problem %}
+                        <ul class="description-problems__list">
+                            {% for problem in description_block.description_block_problem %}
+                            <li class="description-problems__list_item">
+                                <ul class="description-problems__list_item_text"
+                                    {% if color.default is False %} style="color:{{color.description_font_color}}" {% endif %}>
+                                    {% if problem.number %}
+                                    <p class="description-problems__list_item_text_number">
+                                        {{problem.number}}</p>
                                     {% endif %}
-                                    <p class="description-problems__list_item_sublist_subitem-subtitle">{{part.text}}</p>
-                                </li>
-                                {% endfor %}
-                            </ul>
-                            {% endif %}
-                        </li>
-                        {% endfor %}
-                    </ul>
-                    {% endif %}
+                                    <p class="description-problems__list_item_text_description">
+                                        {{problem.description}}
+                                    </p>
+                                </ul>
+                                {% if problem.problem_part %}
+                                <ul class="description-problems__list_item_sublist">
+                                    {% for part in problem.problem_part %}
+                                    <li class="description-problems__list_item_sublist_subitem">
+                                        {% if part.name %}
+                                        <p class="description-problems__list_item_sublist_subitem-title">{{part.name}}</p>
+                                        {% endif %}
+                                        <p class="description-problems__list_item_sublist_subitem-subtitle">{{part.text}}</p>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                                {% endif %}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
                 </div>
-            </div>
-            <a class="prev" onclick="plusSlides(-1)">&#10094</a>
-            <a class="next" onclick="plusSlides(1)">&#10095</a>
-</section>
-<div style="text-align: center;">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
+    </section>
+    {% endfor %}
+    <a class="prev" onclick="minusSlide()">&#10094</a>
+    <a class="next" onclick="plusSlide()">&#10095</a>
 </div>
