@@ -1,0 +1,7 @@
+<ul class="menu__sections_item-services_list">
+    {% for menu_item in menu %}
+        <li class="menu__sections_item-services_list_item">
+            <a href="{{ menu_item.get_link }}">{{ menu_item.title }}</a>
+        </li>
+    {% endfor %}
+</ul>

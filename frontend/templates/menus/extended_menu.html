@@ -1,0 +1,13 @@
+<ul class="menu__sections">
+    {% for menu_item in menu %}
+        <li class="menu__sections_item">
+            <a class="menu__sections_item-link"
+               href="{{ menu_item.get_link }}">{{ menu_item.title }}</a>
+            {% if menu_item.title == 'Услуги' %}
+            <div class="menu__sections_item-services">
+                {% include 'menus/extended_submenu.html' with menu=menus.extended_submenu %}
+            </div>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
