@@ -4,6 +4,7 @@ INSTALLED_APPS += [ # noqa
     'home',
     'cases',
     'blocks',
+    'caform',
 ]
 
 MENU_TYPE_HEADER_MENU = 'header_menu'

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="startprj" style="height: 100%;">
+     <form class="container">
+            <h1 class="visually-hidden">Заполнить форму "Начать проект"</h1>
+            <div class="filter">
+                <h3 class="default-title">{{form.title}}</h3>
+                <div class="filter__services">
+                    <h4 class="filter__services_title">{{form.subtitle}}</h4>
+                    <ul class="filter__services_list">
+                        {% for service in form.form_service %}
+                        <li class="filter__services_list_item">
+                            <input type="checkbox" class="filter__services_list_item-input" name="Услуги"
+                                id="{{service.name}}" value="{{service.name}}">
+                            <label for="{{service.name}}">{{service.name}}</label>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="filter__budget">
+                    <h4 class="filter__budget_title">{{form.filter_title}}</h4>
+                    <input type="range" min="1000000" max="10000000" step="500000" value="50"
+                        class="filter__budget_slider">
+                </div>
+            </div>
+         <div class="info">
+                <input type="text" name="username" placeholder="Имя*">
+                <input type="text" class="tel" name="phone" placeholder="Телефон*">
+                <input type="text" name="mail" placeholder="Электронная почта">
+                <textarea type="text" name="purpose" placeholder="Опишите задачу"></textarea>
+                <div class="info__file">
+                    <input type="file" name="file" id="file" accept=".doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+                    <label for="file">Прикрепите файл</label>
+                </div>
+                <input type="submit" class="info__submit" value="Отправить">
+                <p class="info_acceptall">Нажимая на кнопку «Отправить», я соглашаюсь </br>
+                    с политикой конфиденциальности сайта.</p>
+            </div>
+        </form>
+</main>
+{% endblock %}
+
+{% block footer %}
+{% include 'include/footer_down.html' %}
+{% include 'include/form_script.html' %}
+{% endblock %}
