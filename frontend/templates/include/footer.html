@@ -50,14 +50,5 @@
             </ul>
             {% endif %}
         </div>
-        <div class="footer-down">
-            <div class="footer-down_group container">
-                {% if footer.left_bottom_text %}
-                <p class="footer-down_group_text">{{footer.left_bottom_text}}</p>
-                {% endif %}
-                {% if footer.right_bottom_text %}
-                <a href="#" class="footer-down_group_link">{{footer.right_bottom_text}}</a>
-                {% endif %}
-            </div>
-        </div>
+        {% include 'include/footer_down.html' %}
 </footer>
