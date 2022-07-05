@@ -1,9 +1,11 @@
 <div class="menu">
         <div class="container">
             <div class="menu__info">
+                {% if header.extended_logo %}
                 <div class="menu__info_logo">
-                    <img src="{{header.logo}}" class="menu__info_logo-img" alt="{{header.logo_alt}}">
+                    <img src="{{header.extended_logo}}" class="menu__info_logo-img" alt="{{header.extended_logo_alt}}">
                 </div>
+                {% endif %}
                 <a href="./form_startprj.html" class="menu__info_startprj">
                     <p>Начать проект</p>
                 </a>
