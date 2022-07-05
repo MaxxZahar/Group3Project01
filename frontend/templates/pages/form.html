@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<main class="startprj" style="height: 100%;">
+<main class="startprj">
      <form class="container">
             <h1 class="visually-hidden">Заполнить форму "Начать проект"</h1>
             <div class="filter">
@@ -28,14 +28,15 @@
                 <input type="text" name="username" placeholder="Имя*">
                 <input type="text" class="tel" name="phone" placeholder="Телефон*">
                 <input type="text" name="mail" placeholder="Электронная почта">
-                <textarea type="text" name="purpose" placeholder="Опишите задачу"></textarea>
+                <textarea name="purpose" placeholder="Опишите задачу"></textarea>
                 <div class="info__file">
-                    <input type="file" name="file" id="file" accept=".doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+                     <input type="file" name="file" id="file"
+                        accept=".doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
                     <label for="file">Прикрепите файл</label>
                 </div>
                 <input type="submit" class="info__submit" value="Отправить">
                 <p class="info_acceptall">Нажимая на кнопку «Отправить», я соглашаюсь </br>
-                    с политикой конфиденциальности сайта.</p>
+                    с <a href="#" class="info_acceptall-link">политикой конфиденциальности сайта</a>.</p>
             </div>
         </form>
 </main>
@@ -43,5 +44,7 @@
 
 {% block footer %}
 {% include 'include/footer_down.html' %}
+{% include 'include/upward.html' %}
+{% include 'include/extended.html' %}
 {% include 'include/form_script.html' %}
 {% endblock %}
