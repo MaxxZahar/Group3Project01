@@ -4,6 +4,7 @@ from .form import FormModel
 
 class ServiceModel(models.Model):
     name = models.CharField(max_length=255, verbose_name='Услуга')
+    html_name = models.CharField(blank=True, null=True, max_length=255, verbose_name='Имя для html формы')
     form = models.ForeignKey(FormModel, on_delete=models.CASCADE, related_name='form_service', verbose_name='Форма')
     order = models.IntegerField(verbose_name='Порядок отображения')
 

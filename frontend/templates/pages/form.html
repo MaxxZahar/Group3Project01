@@ -2,7 +2,8 @@
 
 {% block content %}
 <main class="startprj">
-     <form class="container">
+     <form class="container" method="post">
+            {% csrf_token %}
             <h1 class="visually-hidden">Заполнить форму "Начать проект"</h1>
             <div class="filter">
                 <h3 class="default-title">{{form.title}}</h3>
@@ -11,17 +12,17 @@
                     <ul class="filter__services_list">
                         {% for service in form.form_service %}
                         <li class="filter__services_list_item">
-                            <input type="checkbox" class="filter__services_list_item-input" name="Услуги"
-                                id="{{service.name}}" value="{{service.name}}">
-                            <label for="{{service.name}}">{{service.name}}</label>
+                            <input type="checkbox" class="filter__services_list_item-input" name="services"
+                                id="{{service.html_name}}" value="{{service.html_name}}">
+                            <label for="{{service.html_name}}">{{service.name}}</label>
                         </li>
                         {% endfor %}
                     </ul>
                 </div>
                 <div class="filter__budget">
                     <h4 class="filter__budget_title">{{form.filter_title}}</h4>
-                    <input type="range" min="1000000" max="10000000" step="500000" value="50"
-                        class="filter__budget_slider">
+                    <input type="range" min="1" max="100" step="1" name="budget" id="myRange" class="filter__budget_slider" >
+                    <p class="filter__budget_money">от <span id="myValue"></span>00000</p>
                 </div>
             </div>
          <div class="info">
@@ -43,7 +44,9 @@
 {% endblock %}
 
 {% block footer %}
+<footer class="footer">
 {% include 'include/footer_down.html' %}
+</footer>
 {% include 'include/upward.html' %}
 {% include 'include/extended.html' %}
 {% include 'include/form_script.html' %}
